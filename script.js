@@ -85,12 +85,14 @@ buyerForm.addEventListener("submit", function (e) {
   };
   let validateEmail = (e) => {
     let pattern = /^[a-zA-Z._0-9][a-zA-z._0-9]+@[a-z0-9]{3,20}\.[a-z]{2,4}$/
-    if (!pattern.test(buyerForm.email.value)) {
-      
-      emailError.innerText = "Неправильно введений email"
-      return false
-    } 
-    return true
+    if (buyerForm.email.value == "") return true
+    else{
+      if (!pattern.test(buyerForm.email.value)) {
+        emailError.innerText = "Неправильно введений email"
+        return false
+      } 
+      return true
+    }
   }
 
   if (!validateUserName() || !validatePhoneNumber() || !validateEmail()) return false;
