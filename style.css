@@ -1,0 +1,515 @@
+@font-face {
+  font-family: 'MyFont'; /* Назва шрифту */
+  src: url('./media/fonts/Lobster-Regular.ttf') format('truetype'); /* Формат ttf */
+  font-weight: normal; /* Наприклад, 400 */
+  font-style: normal;  /* Наприклад, normal або italic */
+}
+
+
+:root{
+  --background-color: #16161a;
+  /* --text-in-block-color: #001858; */
+  --text-in-block-color: #0D1B1E;
+  --text-color: #faf7ff;
+  --secondary-color: #242629;
+
+  --primary-color: #4caf50;
+  --primary-color-dark: #388e3c;
+  --error-color: #e63946;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+body{
+  margin: 0;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: Arial, Helvetica, sans-serif;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  margin: 0 250px;
+}
+.row{
+  display: flex;
+  margin: 10px 0 ;
+}
+.row > * {
+  flex: 1;
+}
+.flex-1{
+  flex: 1;
+}
+
+/* --------- header---------- */
+header{
+  height: 80px;
+  background-color: var(--secondary-color);
+  box-shadow: 0 -4px 10px lightgray;
+  margin-bottom: 20px;
+}
+.header-content{
+  display: flex;
+}
+header img{
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin: 10px 30px;
+}
+header nav ul{
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  margin-right: 50px;
+}
+header nav ul li:not(:last-child){
+  margin-right: 20px;
+}
+header nav ul li a:hover{
+  color: var(--text-in-block-color);
+}
+header nav ul li a{
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 18px;
+}
+
+/* --------- header---------- */
+
+/* ---------  main ---------- */
+
+main{
+  width: 100%;
+}
+main .price-box{
+  position: absolute;
+  bottom: -80px;
+  right: -10px;
+  width: 100px;
+  height: 100px;
+  border: 2px double rgb(189, 189, 0);
+  border-radius: 50%;
+  background-color: rgb(255, 255, 0);
+
+  transform: rotate(-10deg);
+
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 18px;
+}
+.price-box p{
+  margin: 5px 0;
+  text-align: center;
+}
+.price-box .old-price{
+  font-size: 14px;
+  text-decoration: line-through;
+  color: gray;
+}
+.price-box .new-price{
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+main .section-block {
+  opacity: 0; /* Початкова невидимість */
+  transform: translateY(80px); /* Початкове зміщення */
+  transition: transform 1s ease-out; /* Плавний перехід */
+  /* ----------------- */
+  padding: 20px;
+  border-radius: 15px;
+  background-color: var(--text-in-block-color);
+  box-shadow: 0 4px 8px -6px lightgray;
+}
+
+/* ----------- */
+.section-block.visible {
+  opacity: 1; /* Робимо елемент видимим */
+  transform: translateY(0); /* Зміщення забирається */
+}
+
+.hidden {
+  visibility: hidden; /* Сховати до активації */
+}
+
+.visible {
+  visibility: visible; /* Відобразити, коли активується */
+}
+/* --------------- */
+
+.first-image{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 600px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 70%;
+  background-image: url(./media/images/first-bg-img.jpg);
+}
+.main-text{
+  position: relative;
+  max-width: 800px;
+  padding: 5px;
+  background: transparent;
+  backdrop-filter: blur(15px);
+  border: 1px solid white;
+  border-radius: 10px;
+  font-family: MyFont;
+  font-size: 30px;
+  /* color: #007bff; */
+  color: rgb(13, 13, 188);
+  /* color: var(--text-in-block-color); */
+  margin: 0px auto;
+}
+.second-image{
+  height: 600px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0% 30%;
+  background-image: url(./media/images/second-bg-img.jpg);
+  display: flex;
+  align-items: end;
+}
+.second-text{
+  display: block;
+  max-width: 800px;
+  padding: 5px;
+  background: transparent;
+  backdrop-filter: blur(7px);
+  border: 1px solid rgb(193, 193, 193);
+  border-radius: 10px;
+  font-size: 30px;
+  color: var(--text-in-block-color);
+  margin: 0 auto;
+}
+.third-image{
+  height: 600px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0% 20%;
+  background-image: url(./media/images/third-bg-img.png);
+  /* display: flex;
+  align-items: end; */
+}
+.third-text{
+  display: block;
+  max-width: 800px;
+  padding: 5px;
+  background: transparent;
+  backdrop-filter: blur(7px);
+  border: 1px solid rgb(193, 193, 193);
+  border-radius: 10px;
+  font-size: 30px;
+  color: var(--text-in-block-color);
+  /* margin: 0 auto; */
+}
+.fourth-block{
+  color: black;
+  background: linear-gradient(white, #9FA5D5);
+}
+
+.form-block{
+  background: linear-gradient(#9FA5D5, #E8F5C8);
+}
+.buy-button{
+  margin-top: 10px;
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: bold;
+  font-size: 18px;
+  display: inline-block;
+  background-color: var(--primary-color);
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+/* ---------------- для таймера ------------ */
+
+.timer {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.timer-box{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.timer-box h3{
+  text-align: center;
+  text-decoration: underline;
+  margin-bottom: 10px;
+}
+.circle {
+  width: 100px;
+  height: 100px;
+  /* border: 5px solid rgb(13, 13, 188); */
+  border: 5px solid #007bff;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.circle span {
+  font-size: 24px;
+  font-weight: bold;
+  /* color: rgb(13, 13, 188); */
+  color: #007bff;
+}
+
+.circle p {
+  font-size: 14px;
+  margin: 0;
+  color: #555;
+}
+/* ---------------- для таймера ------------ */
+
+/* для форми */
+form {
+  margin: auto;
+  width: 100%;
+  max-width: 600px;
+  padding: 20px;
+  border-radius: 5px;
+}
+.form-block h4{
+  color: var(--background-color);
+  margin: 0;
+  padding: 0 10px;
+  text-align: center;
+}
+.form-error{
+  color: var(--error-color);
+  font-size: 14px;
+}
+.form-section {
+  margin-bottom: 16px;
+}
+label {
+  color:rgb(48, 48, 48);
+  font-weight: bold;
+  margin-top: 8px;
+  display: block;
+}
+input {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: border-color 0.4s, box-shadow 0.4s;
+}
+input:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.4);
+  outline: none;
+}
+input::placeholder {
+  color: #aaa;
+}
+input:hover {
+  border-color: var(--primary-color);
+}
+.form-submit-box {
+  text-align: center;
+}
+button[type="submit"] {
+  margin-top: 10px;
+  padding: 12px 20px;
+  background-color: var(--primary-color);
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.4s;
+}
+button[type="submit"]:hover {
+  background-color: var(--primary-color-dark);
+}
+button[type="submit"]:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.4);
+}
+
+.success-message {
+  position: fixed;
+  top: 100px;
+  left: 20px;
+  /* display: none; */
+  transform: translateX(-350px);
+  transition: all 0.8s ease-out;
+  max-width: 330px;
+  background-color: #d4edda;
+  color: #155724;
+  padding: 10px;
+  border: 1px solid #c3e6cb;
+  border-radius: 10px;
+  font-size: 24px;
+}
+/* для форми */
+
+/* ---------  main ---------- */
+
+/* --------- footer --------- */
+
+footer{
+  min-height: 80px;
+  background-color: var(--secondary-color);
+  box-shadow: 0 4px 10px lightgray;
+  font-size: 18px;
+
+  align-items: center;
+}
+/* footer .contacts-box p{
+  margin: 0;
+}
+footer .icons-box > a img{
+  height: 40px;
+  width: 40px;
+} */
+footer a{
+  color: var(--text-color);
+  text-decoration: none;
+}
+.footer-content{
+  margin: auto;
+  height: 80px;
+  display: flex;
+  align-items: center;
+}
+
+/* --------- footer --------- */
+
+/* адаптивність */
+
+@media (max-width: 1100px) {
+  a {
+    -webkit-tap-highlight-color: rgba(174, 174, 174, 0.5) ;
+  }
+  .container {
+    margin: 0 110px;
+  }
+  header nav ul li a:hover{
+    color: var(--text-color);
+  }
+  .timer{
+    gap: 10px;
+  }
+  .circle{
+    width: 80px;
+    height: 80px;
+  }
+  .first-image{
+    background-position: 30% 70%;
+  }
+  .second-image{
+    background-position: 50% 0% ;
+  }
+  .second-text{
+    font-size: 25px;
+  }
+  .third-image{
+    background-position: 70% 0 ;
+  }
+  .third-text{
+    max-width: 500px;
+    margin-right: 120px;
+    margin-top: 0;
+    font-size: 20px;  
+  }
+}
+
+@media (max-width: 576px) {
+ .container {
+    margin: 0 20px;
+  }
+  header img{
+    margin: 10px 3px 10px 0;
+  }
+  header nav ul{
+    margin-right: 0;
+  }
+  header nav ul li:not(:last-child) {
+    margin-right: 20px;
+  }
+  header nav ul li a{
+    font-size: 17px;
+  }
+  form {
+    padding: 16px;
+  }
+  input {
+    font-size: 14px;
+    padding: 10px;
+  }
+  button[type="submit"] {
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+  .timer{
+    gap: 2px;
+  }
+  .circle{
+    width: 70px;
+    height: 70px;
+    /* border: 2px solid rgb(13, 13, 188); */
+    border: 2px solid #007bff;
+  }
+  .circle span{
+    font-size: 20px;
+  }
+  .first-image{
+    background-position: 40% 100%;
+  }
+  .main-text{
+    margin-top: 0;
+    font-size: 22px;
+  }
+  .second-image{
+    background-position: 50% 0 ;
+  }
+  .second-text{
+    margin-top: 0;
+    margin-bottom: 60px;
+    font-size: 20px;
+  }
+  .third-image{
+    background-position: 70% -100% ;
+  }
+  .third-text{
+    margin-right: 80px;
+    max-width: 300px;
+    margin-top: 0;
+    font-size: 18px;
+  }
+  label{
+    font-weight: normal;
+  }
+}
+/* адаптивність */

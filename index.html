@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BOD4shop</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="icon" href="./media/images/logo.jpg" type="image/png" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="header-content">
+          <section class="logo-box">
+            <img src="./media/images/logo.jpg" alt="site logo" />
+          </section>
+          <div class="flex-1"></div>
+          <nav>
+            <ul>
+              <li><a href="#info">Опис</a></li>
+              <li><a href="#characteristics">Характеристики</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <div class="container flex-1">
+      <main>
+        <div class="row">
+          <section class="section-block first-image">
+            <div class="row">
+              <span class="main-text">
+                <!-- Не любиш мити посуд? В нас є чудове рішення, цей чуду пристрій вимиває весь бруд з чашки всього за 3 секунди! -->
+                Прискорте процес миття посуду з ополіскувачем для склянок, який миє склянку за 3 секунди!
+                <div class="price-box">
+                  <span>Ціна:</span>
+                  <p><span class="old-price">600грн</span><br><span class="new-price">299грн</span></p>
+                </div>
+              </span>
+            </div>
+
+            <div class="row">
+              <div class="timer-box">
+                <h3>До завершення акції залишилося:</h3>
+                <div class="timer">
+                  <div class="circle">
+                    <span id="days">0</span>
+                    <p>Дні</p>
+                  </div>
+                  <div class="circle">
+                    <span id="hours">0</span>
+                    <p>Години</p>
+                  </div>
+                  <div class="circle">
+                    <span id="minutes">0</span>
+                    <p>Хвилини</p>
+                  </div>
+                  <div class="circle">
+                    <span id="seconds">0</span>
+                    <p>Секунди</p>
+                  </div>
+                </div>
+                <a class="buy-button" href="#form">Замовити зараз!</a>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <div class="row">
+          <section id="info" class="section-block second-image">
+            <span class="second-text">
+              Ополіскувач склянок та кухлів для кухонної раковини - це пристрій, призначений для зручного ополіскування та сушіння столових приладів, склянок, кухлів та іншого посуду після миття.
+            </span>
+          </section>
+        </div>
+
+        <div class="row">
+          <section id="characteristics" class="section-block third-image">
+            <span class="third-text">
+              Характеристика: Коло діаметр 12,5см, висота 2,8см, матеріал пластик. Лопатка для миття діаметр 10см, матеріал пластик. Різьблення 5см, підходить для миття або стільниці не більше 4см. Ширина 2см. Трубка 80см
+            </span>
+          </section>
+        </div>
+
+        <div class="row">
+          <section class="section-block fourth-block">
+            <h3>
+              Особливості: 
+            </h3>
+            <p>
+              <b>Ефективність:</b> очистіть склянку або кухоль лише за 3 секунди завдяки потужному струменю води.
+            </p>
+            <p>
+              <b>Економія води:</b> інноваційна конструкція забезпечує мінімальне споживання води, знижуючи витрати.
+            </p>
+            <p>
+              <b>Зручність:</b> простий у використанні — просто натисніть на поверхню ополіскувача, і він автоматично почне очищення.
+            </p>
+            <p>
+              <b>Міцні матеріали:</b> виготовлений із якісного пластику, який забезпечує довговічність та стійкість до зношування
+            </p>
+          </section>
+        </div>
+
+        <div class="row">
+          <section id="form" class="section-block form-block">
+            <h4>Для того щоб замовити залиште свої контактні дані нище і з вами зв'яжуться</h4>
+            <form name="buyerForm">
+              <div class="form-group">
+                <label for="userName">Ваше Ім'я та Прізвище:</label>
+                <input
+                  id="userName"
+                  name="userName"
+                  type="text"
+                  placeholder="Прізвище та ім'я"
+                />
+                <span class="form-error" id="nameError"></span>
+              </div>
+              <div class="form-group">
+                <label for="phoneNumber">Ваш номер телефону:</label>
+                <input
+                  id="phoneNumber"
+                  type="tel"
+                  name="phoneNumber"
+                  placeholder="+380__ ___ __ __"
+                />
+                <span class="form-error" id="phoneError"></span>
+              </div>
+              <div class="form-group">
+                <label for="email">Ваш email:</label>
+                <input id="email" name="email" type="email" placeholder="Your email" />
+                <span class="form-error" id="emailError"></span>
+              </div>
+              <div class="form-group">
+                <label for="nickTG">Ваш нік в телеграм (необовязково):</label>
+                <input id="nickTG" type="text" placeholder="@user" />
+              </div>
+              <div class="form-submit-box">
+                <button type="submit">Замовити</button>
+              </div>
+            </form>
+          </section>
+        </div>
+        
+      </main>
+    </div>
+    <div id="successMessage" class="success-message">
+      Дані успішно надіслані! <br>
+      З вами зв'яжуться сьогодні!
+    </div>
+
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <!-- <div class="icons-box">
+            <a href="#"><img src="./media/images/telegram_icon.png" alt="telegram_icon"></a>
+          </div> -->
+          <!-- <div class="flex-1"></div> -->
+          <div class="contacts-box">
+            <p style="margin-bottom: 2px;">Залишилися питання?<br> Телефонуйте: <a href="tel:0996013139">0996013139</a></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
