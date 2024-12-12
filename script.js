@@ -86,10 +86,7 @@ buyerForm.addEventListener("submit", function (e) {
   let validateEmail = (e) => {
     let pattern = /^[a-zA-Z._0-9][a-zA-z._0-9]+@[a-z0-9]{3,20}\.[a-z]{2,4}$/
     if (!pattern.test(buyerForm.email.value)) {
-      if(buyerForm.email.value == "") {
-        emailError.innerText = "Ви не ввели email"
-        return false
-      }
+      
       emailError.innerText = "Неправильно введений email"
       return false
     } 
